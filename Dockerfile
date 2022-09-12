@@ -17,6 +17,6 @@ RUN sudo apt-get update \
     && tar -zxvf helm-v${HELM_VERSION}-linux-amd64.tar.gz \
     && sudo mv linux-amd64/helm /usr/local/bin/helm && sudo chmod +x /usr/local/bin/helm \
     && echo 'alias k="kubectl"' >> ~/.bashrc \
-		&& echo 'alias cluster.up="terraform apply --auto-approve"' \
-		&& echo 'alias cluster.down="terraform destroy --auto-approve"' \
+    && echo 'alias cluster.up="terraform apply --auto-approve"' >>  ~/.bashrc \ 
+    && echo 'alias cluster.down="terraform destroy --auto-approve"' >> ~/.bashrc 
   
