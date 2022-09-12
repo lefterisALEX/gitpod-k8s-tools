@@ -18,5 +18,7 @@ RUN sudo apt-get update \
     && sudo mv linux-amd64/helm /usr/local/bin/helm && sudo chmod +x /usr/local/bin/helm \
     && echo 'alias k="kubectl"' >> ~/.bashrc \
     && echo 'alias cluster.up="terraform init --upgrade && terraform apply --auto-approve"' >>  ~/.bashrc \ 
-    && echo 'alias cluster.down="terraform destroy --auto-approve"' >> ~/.bashrc 
+    && echo 'alias cluster.down="terraform destroy --auto-approve"' >> ~/.bashrc \
+    && echo 'alias civo.login="civo apikey add key01 $TF_VAR_civo_token && civo kubernetes config  $(civo kubernetes list  -ojson | jq  --raw-output '.[0].id') --save >> ~/.bashrc "
+
   
