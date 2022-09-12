@@ -26,5 +26,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: lalx/gitpod-k8s-tools:latest  lalx/gitpod-k8s-tools:$(date +%s)
+          tags: lalx/gitpod-k8s-tools:latest 
 
